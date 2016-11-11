@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		68403944B793ADBA2FCAC9D8 /* Pods_SCMorse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 433D85B0F0DE985271E0A18E /* Pods_SCMorse.framework */; };
-		934344261DD61AB10063CC22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934344251DD61AB10063CC22 /* AppDelegate.swift */; };
-		934344281DD61AB10063CC22 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934344271DD61AB10063CC22 /* ViewController.swift */; };
-		9343442B1DD61AB10063CC22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 934344291DD61AB10063CC22 /* Main.storyboard */; };
-		9343442D1DD61AB10063CC22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9343442C1DD61AB10063CC22 /* Assets.xcassets */; };
-		934344301DD61AB10063CC22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9343442E1DD61AB10063CC22 /* LaunchScreen.storyboard */; };
+		934344431DD61BEF0063CC22 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 934344381DD61BEF0063CC22 /* Info.plist */; };
+		934344441DD61BEF0063CC22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9343443A1DD61BEF0063CC22 /* AppDelegate.swift */; };
+		934344451DD61BEF0063CC22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9343443B1DD61BEF0063CC22 /* Assets.xcassets */; };
+		934344461DD61BEF0063CC22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9343443C1DD61BEF0063CC22 /* LaunchScreen.storyboard */; };
+		934344471DD61BEF0063CC22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9343443E1DD61BEF0063CC22 /* Main.storyboard */; };
+		934344481DD61BEF0063CC22 /* SpeechRecognizerContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934344411DD61BEF0063CC22 /* SpeechRecognizerContext.swift */; };
+		934344491DD61BEF0063CC22 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934344421DD61BEF0063CC22 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +22,13 @@
 		564F7C4D864D0F599183F23C /* Pods-SCMorse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCMorse.release.xcconfig"; path = "Pods/Target Support Files/Pods-SCMorse/Pods-SCMorse.release.xcconfig"; sourceTree = "<group>"; };
 		7A8EE0959F04E4635F5037D5 /* Pods-SCMorse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCMorse.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SCMorse/Pods-SCMorse.debug.xcconfig"; sourceTree = "<group>"; };
 		934344221DD61AB10063CC22 /* SCMorse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCMorse.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		934344251DD61AB10063CC22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		934344271DD61AB10063CC22 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9343442A1DD61AB10063CC22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9343442C1DD61AB10063CC22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9343442F1DD61AB10063CC22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		934344311DD61AB10063CC22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		934344381DD61BEF0063CC22 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9343443A1DD61BEF0063CC22 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9343443B1DD61BEF0063CC22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9343443D1DD61BEF0063CC22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9343443F1DD61BEF0063CC22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		934344411DD61BEF0063CC22 /* SpeechRecognizerContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechRecognizerContext.swift; sourceTree = "<group>"; };
+		934344421DD61BEF0063CC22 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +55,7 @@
 		934344191DD61AB10063CC22 = {
 			isa = PBXGroup;
 			children = (
-				934344241DD61AB10063CC22 /* SCMorse */,
+				934344371DD61BEF0063CC22 /* SCMorse */,
 				934344231DD61AB10063CC22 /* Products */,
 				4644D98C82429B65C6AA9625 /* Pods */,
 				DC8EB2E71F576DC0B851A125 /* Frameworks */,
@@ -67,17 +70,34 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		934344241DD61AB10063CC22 /* SCMorse */ = {
+		934344371DD61BEF0063CC22 /* SCMorse */ = {
 			isa = PBXGroup;
 			children = (
-				934344251DD61AB10063CC22 /* AppDelegate.swift */,
-				934344271DD61AB10063CC22 /* ViewController.swift */,
-				934344291DD61AB10063CC22 /* Main.storyboard */,
-				9343442C1DD61AB10063CC22 /* Assets.xcassets */,
-				9343442E1DD61AB10063CC22 /* LaunchScreen.storyboard */,
-				934344311DD61AB10063CC22 /* Info.plist */,
+				934344401DD61BEF0063CC22 /* Sourse */,
+				934344391DD61BEF0063CC22 /* Resouses */,
+				9343443E1DD61BEF0063CC22 /* Main.storyboard */,
+				934344381DD61BEF0063CC22 /* Info.plist */,
 			);
 			path = SCMorse;
+			sourceTree = "<group>";
+		};
+		934344391DD61BEF0063CC22 /* Resouses */ = {
+			isa = PBXGroup;
+			children = (
+				9343443A1DD61BEF0063CC22 /* AppDelegate.swift */,
+				9343443B1DD61BEF0063CC22 /* Assets.xcassets */,
+				9343443C1DD61BEF0063CC22 /* LaunchScreen.storyboard */,
+			);
+			path = Resouses;
+			sourceTree = "<group>";
+		};
+		934344401DD61BEF0063CC22 /* Sourse */ = {
+			isa = PBXGroup;
+			children = (
+				934344411DD61BEF0063CC22 /* SpeechRecognizerContext.swift */,
+				934344421DD61BEF0063CC22 /* ViewController.swift */,
+			);
+			path = Sourse;
 			sourceTree = "<group>";
 		};
 		DC8EB2E71F576DC0B851A125 /* Frameworks */ = {
@@ -151,9 +171,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				934344301DD61AB10063CC22 /* LaunchScreen.storyboard in Resources */,
-				9343442D1DD61AB10063CC22 /* Assets.xcassets in Resources */,
-				9343442B1DD61AB10063CC22 /* Main.storyboard in Resources */,
+				934344461DD61BEF0063CC22 /* LaunchScreen.storyboard in Resources */,
+				934344451DD61BEF0063CC22 /* Assets.xcassets in Resources */,
+				934344431DD61BEF0063CC22 /* Info.plist in Resources */,
+				934344471DD61BEF0063CC22 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,7 +208,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		FB4FEC1DDE2C575103E77E88 /* [CP] Embed Pods Frameworks */ = {
@@ -212,28 +233,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				934344281DD61AB10063CC22 /* ViewController.swift in Sources */,
-				934344261DD61AB10063CC22 /* AppDelegate.swift in Sources */,
+				934344491DD61BEF0063CC22 /* ViewController.swift in Sources */,
+				934344441DD61BEF0063CC22 /* AppDelegate.swift in Sources */,
+				934344481DD61BEF0063CC22 /* SpeechRecognizerContext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		934344291DD61AB10063CC22 /* Main.storyboard */ = {
+		9343443C1DD61BEF0063CC22 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				9343442A1DD61AB10063CC22 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		9343442E1DD61AB10063CC22 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9343442F1DD61AB10063CC22 /* Base */,
+				9343443D1DD61BEF0063CC22 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		9343443E1DD61BEF0063CC22 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9343443F1DD61BEF0063CC22 /* Base */,
+			);
+			name = Main.storyboard;
+			path = Resouses;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -377,6 +400,7 @@
 				934344361DD61AB10063CC22 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
