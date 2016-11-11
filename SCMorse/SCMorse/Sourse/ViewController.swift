@@ -7,19 +7,33 @@
 //
 
 import UIKit
+import RxSwift
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet var textView: UITextView!
+    @IBOutlet var onSpeachButton: UIButton!
+    
+    let disposeBag = DisposeBag()
+    let speachRecognizer = SpeechRecognizerContext(locale: Locale(identifier: "ru_RU"))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.speachRecognizer.requestAutorization()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func onSpeach(_ sender: UIButton) {
+        if self.speachRecognizer.isRecording == true {
+            self.speachRecognizer.stopRecording()
+        } else {
+            self.speachRecognizer.startRecording().subscribe {
+                switch $0 {
+                    case.next(let result): self.textView.text = result
+                    case.error(let error): print("\(error)")
+                    default: return
+                }
+            }.addDisposableTo(self.disposeBag)
+        }
     }
-
-
 }
 

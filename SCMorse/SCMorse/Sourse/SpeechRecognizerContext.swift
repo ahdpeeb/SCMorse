@@ -9,10 +9,11 @@
 import UIKit
 import Speech
 import RxSwift
+import RxCocoa
 
 extension SpeechRecognizerContext: SFSpeechRecognizerDelegate {
     func speechRecognizer(_ speechRecognizer: SFSpeechRecognizer, availabilityDidChange available: Bool) {
-        //notify ifSpeach recornithr available
+        self.isRecognizerAvaliable = Driver.just(available)
     }
 }
 
@@ -23,36 +24,40 @@ class SpeechRecognizerContext: NSObject {
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
     
-   
+    // MARK: Public observable Variables
+    public var isRecognizerAvaliable: Driver<Bool>?
+    
+    // MARK: Public variables
+    public var isRecording: Bool { return audioEngine.isRunning }
+    
+    // MARK: Public methods
     public init( locale: Locale) {
         self.speechRecognizer = SFSpeechRecognizer(locale: locale)
-        
         super.init()
     }
     
-   public func requestAutorization() {
+    public func requestAutorization() {
         SFSpeechRecognizer.requestAuthorization {
             switch $0 {
-            case.authorized: print("authorized")
-            case.denied: print("authorized")
-            case.notDetermined: print("authorized")
-            case.restricted: print("authorized")
+                case.authorized: print("authorized")
+                case.denied: print("denied")
+                case.notDetermined: print("notDetermined")
+                case.restricted: print("restricted")
             }
         }
     }
     
-    func stopRecording() {
-        recognitionTask?.cancel()
-        recognitionTask = nil
+    public func stopRecording() {
+        if audioEngine.isRunning {
+            audioEngine.stop()
+            recognitionRequest?.endAudio()
+        }
     }
     
      //will notyfy when SpeechRecognizer convert model speach to string or Error result
-    func startRecording() -> Observable<String> {
+    public func startRecording() -> Observable<String> {
         return Observable<String>.create{ observer -> Disposable in
-            if  self.recognitionTask != nil {
-                self.recognitionTask?.cancel()
-                self.recognitionTask = nil
-            }
+            self.calcelTask()
             
             let audioSession = AVAudioSession.sharedInstance()
             do {
@@ -79,23 +84,23 @@ class SpeechRecognizerContext: NSObject {
                         observer.onError(error)
                     }
                     
-                var isFinal = false
-                if result != nil {
-                    if let string = result?.bestTranscription.formattedString {
-                        observer.onNext(string)
+                    var isFinal = false
+                    if result != nil {
+                        if let string = result?.bestTranscription.formattedString {
+                            observer.onNext(string)
+                        }
+                        
+                        isFinal = (result?.isFinal)!
                     }
-                    
-                    isFinal = (result?.isFinal)!
-                }
                 
-                if error != nil || isFinal {
-                    self.audioEngine.stop()
-                    inputNode.removeTap(onBus: 0)
-                    observer.onCompleted()
-                    self.recognitionRequest = nil
-                    self.recognitionTask = nil
-                }
-            })
+                    if error != nil || isFinal {
+                        self.audioEngine.stop()
+                        inputNode.removeTap(onBus: 0)
+                        observer.onCompleted()
+                        self.recognitionRequest = nil
+                        self.recognitionTask = nil
+                    }
+                })
 
             let recordingFormat = inputNode.outputFormat(forBus: 0)
             inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer, when) in
@@ -106,15 +111,24 @@ class SpeechRecognizerContext: NSObject {
             do {
                 try self.audioEngine.start()
             } catch {
-                let error = NSError(domain:"audioEngine couldn't start because of an error.", code: 2, userInfo: nil)
+                let error = NSError(domain:"AudioEngine couldn't start because of an error.", code: 2, userInfo: nil)
                 observer.onError(error)
             }
             
              return Disposables.create {
                 self.stopRecording()
+                self.calcelTask()
             }
             
         }.observeOn(MainScheduler.asyncInstance)
+    }
+    
+    // MARK: Private methods
+    private func calcelTask() {
+        if  self.recognitionTask != nil {
+            self.recognitionTask?.cancel()
+            self.recognitionTask = nil
+        }
     }
 }
 

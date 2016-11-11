@@ -75,7 +75,6 @@
 			children = (
 				934344401DD61BEF0063CC22 /* Sourse */,
 				934344391DD61BEF0063CC22 /* Resouses */,
-				9343443E1DD61BEF0063CC22 /* Main.storyboard */,
 				934344381DD61BEF0063CC22 /* Info.plist */,
 			);
 			path = SCMorse;
@@ -96,6 +95,7 @@
 			children = (
 				934344411DD61BEF0063CC22 /* SpeechRecognizerContext.swift */,
 				934344421DD61BEF0063CC22 /* ViewController.swift */,
+				9343443E1DD61BEF0063CC22 /* Main.storyboard */,
 			);
 			path = Sourse;
 			sourceTree = "<group>";
@@ -256,7 +256,7 @@
 				9343443F1DD61BEF0063CC22 /* Base */,
 			);
 			name = Main.storyboard;
-			path = Resouses;
+			path = ../Resouses;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
